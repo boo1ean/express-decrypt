@@ -8,7 +8,7 @@ function buildMiddleware (opts) {
 	}
 
 	var privateKey = ursa.createPrivateKey(opts.privateKey);
-	var padding = opts.padding || opts.padding || ursa.RSA_PKCS1_PADDING;
+	var padding = opts.padding || ursa.RSA_PKCS1_PADDING;
 
 	return function decryptRequestBody (req, res, next) {
 		getRawBody(req, {
